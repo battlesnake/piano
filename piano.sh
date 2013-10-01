@@ -10,11 +10,15 @@ SYNTH="TiMidity"
 # Port on synthesizer to use (TiMidity has 4 by default, I have Guitar Pro 5 in Wine mapped to ports 2 & 3)
 SYNTH_PORT=0
 
+# Your sound card may not support this, try 44100 or 48000 (and set BUFFERSIZE to 8 unless it causes choppy sound)
+SAMPLE_RATE=96000
+BUFFERSIZE=10
+
 function start {
 	if ! pidof timidity > /dev/null
 	then
 		echo "Starting timidity synthesizer"
-		timidity -Os -s96000 -iA -B2,10 & disown
+		timidity -Os -s$SAMPLE_RATE -iA -B2,$BUFFERSIZE & disown
 		sleep 1
 	fi
 
