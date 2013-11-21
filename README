@@ -3,7 +3,11 @@ piano
 
 Mark K Cowan, mark@battlesnake.co.uk
 
-Script to start a TiMidity++ synth and connect my MIDI controller (Evolution MK-449C) to it.  Edit the script head to match your keyboard/controller.
+Script to start a TiMidity++ synth or fluidsynth and connect my MIDI controller (Evolution MK-449C) to it.
+
+Be sure to edit the script head to match your keyboard/controller (the name of which can be found via `aconnect -o`).
+
+By default, this uses Fluidsynth with the "Piano24" soundfont which can be obtained via a quick google search.  Edit the script to set `FLUIDSYNTH=0` to use TiMidity++ instead.
 
 Syntax:
     piano
@@ -13,4 +17,4 @@ Syntax:
 
 With no parameters, "start" is assumed.
 
-Edit the script head to match your controller (`aconnect -i`) and your synthesizer (`aconnect -o`) if not using TiMidity++.
+REMEMBER: Edit the script head to match your controller (`aconnect -o`).
