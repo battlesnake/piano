@@ -18,11 +18,12 @@ SYNTH_CMD="timidity -iA -Os --ext=wpvseo -s48000 -B1,8"
 
 if [[ $FLUIDSYNTH ]]
 then
-	SOUNDFONT="/usr/share/sf2/Piano24.sf2"
+	#SOUNDFONT="/usr/share/sf2/Piano24.sf2"
+	SOUNDFONT="/usr/share/sf2/steinway_grand_piano_1.2.sf2"
 	SYNTH="FLUID Synth"
 	SYNTH_PROC="fluidsynth"
 	SYNTH_PORT=0
-	SYNTH_CMD="fluidsynth  --server --no-shell  --audio-driver=jack --audio-bufcount=2 --gain=1 --audio-channels=2 --midi-driver=alsa_seq --sample-rate=48000 --audio-bufsize=64 --connect-jack-outputs  $SOUNDFONT"
+	SYNTH_CMD="fluidsynth  --server --no-shell  --audio-driver=jack --audio-bufcount=2 --gain=1 --audio-channels=2 --midi-driver=alsa_seq --sample-rate=48000 --audio-bufsize=64 --connect-jack-outputs $SOUNDFONT"
 fi
 
 function start {
